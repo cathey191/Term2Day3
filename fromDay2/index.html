@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+		<style>
+			.col{
+				height: 300px;
+				width: 300px;
+			}
+			.blue{
+				background-color: #0652DD;
+			}
+			.green{
+				background-color: #009432;
+			}
+			.yellow{
+				background-color: #FFC312;
+			}
+			.red{
+				background-color: #EA2027;
+			}
+		</style>
+	<body>
+		<div class="container">
+		  <div class="row">
+  		  <div class="col blue"></div>
+  		  <div class="col green"></div>
+		    <div class="w-100"></div>
+		    <div class="col yellow"></div>
+  		  <div class="col red"></div>
+  		</div>
+		</div>
+		<div class="container">
+			<button type="button" class="btn btn-secondary btn-lg" id="firButton">First Button</button>
+			<button type="button" class="btn btn-secondary btn-lg" id="secButton">Second Button</button>
+			<button type="button" class="btn btn-secondary btn-lg" id="thiButton">Third Button</button>
+			<button type="button" class="btn btn-secondary btn-lg" id="fouButton">Fourth Button</button>
+
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+		<script>
+			$(document).ready(function(){
+				// callback
+				$('#firButton').click(function(){
+					$('.blue').hide(300, function(){
+						$('.blue').show(300);
+					});
+				});
+				// chaining
+				$('#secButton').click(function(){
+					$('.green').hide(300).show(300);
+				});
+				$('#thiButton').click(function(){
+					$('.yellow').toggle();
+				});
+				$('#fouButton').click(function(){
+					$('.red').fadeOut(function(){
+						$('.red').fadeIn();
+					});
+				});
+			}); // document ready
+		</script>
+	</body>
+</html>
