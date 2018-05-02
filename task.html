@@ -3,15 +3,50 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Tasks</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
+		<style>
+			.container{
+				width: 100vw;
+				height: 100vh;
+				text-align: center;
+			}
+			.btn{
+				background-color: #c7ecee;
+				color: #130f40;
+			}
+			.name{
+				font-family: 'Berkshire Swash';
+				transition: all;
+			}
+			.largeText{
+				font-size: 5em;
+			}
+		</style>
 	</head>
 	<body>
-		<div class="">
-			<h1 class=""></h1>
+		<div class="container">
+			<h1 class="name">Sumitra</h1>
+			<button type="button" class="btn" id="sizing">Increase Size</button>
+			<button type="button" class="btn" id="colour">Change Color</button>
+			<button type="button" class="btn" id="colChanging">Small button</button>
 		</div>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
 		<script>
 			$(document).ready(function(){
-
+				$('#sizing').click(function(){
+					$('.name').toggleClass('largeText');
+				});
+				$('#colour').click(function(){
+					$('.name').css('color', '#D980FA');
+					$('body').css('background-color', 'black');
+				});
+				$('#colChanging').click(function(){
+					$('body').css('background-color', 'black');
+					$('.name').css(200, 'color', '#D980FA');
+					$('.name').css(200, 'color', '#6ab04c');
+				});
+				$('.name')
 			});
 		</script>
 	</body>
